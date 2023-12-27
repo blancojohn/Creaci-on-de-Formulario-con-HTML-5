@@ -4,33 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Formulario</title>
 </head>
 
 <body>
-    <div class="container">
-        <form class="row g-5">
-            <div class="card">
-                <div class="card title w-100 bg-light">
-                    <p class="ms-2">Payment form example</p>
+    <section id="rest">
+        <div class="payment-form">
+            <div class="card mx-auto w-75">
+                <div class="card-header">
+                    <h2>Payment form example</h2>
                 </div>
-                <div class="container col-12">
+                <div class="card-body">
                     <div class="alert alert-danger" role="alert">
-                        Some field's are missin'g
+                        Some fields are missing
+                    </div>
+                    <form class="row g-3">
+                        <div class="col-md-5">
+                            <label for="inputCard" class="form-label">Card #</label>
+                            <input type="text" class="form-control" name="card-number" id="inputCard" maxlength="16"
+                                placeholder="XXXXXXXXXXXXXXXX">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputCvc" class="form-label">CVC #</label>
+                            <input type="text" class="form-control" name="input-cvc" id="inputCvc" maxlength="4"
+                                placeholder="0000">
+                        </div>
+                        <div class="col-4">
+                            <label for="inputAmount" class="form-label">Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text dollar-sign">
+                                    $
+                                </span>
+                                <input type="text" class="form-control" id="inputAmount" placeholder="Amount">
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+                            <label for="inputFirstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstname">
+                        </div>
+                        <div class="col-6">
+                            <label for="inputLastname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastname">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Pick a state...</option>
+                                <option>New York</option>
+                                <option>Washington</option>
+                                <option>Liquid state</option>
+                                <option>Solid state</option>
+                                <option>Negation state</option>
+                                <option>Lost state</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-check-label mb-2" for="input_Accept">
+                                We accept:
+                            </label>
+                            <div class="inputAccept" id="input_Accept">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1" checked>
+                                    <label class="form-check-label" for="inlineRadio1"><i
+                                            class="fa-brands fa-cc-mastercard"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2"><i
+                                            class="fa-brands fa-cc-visa"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3"><i
+                                            class="fa-brands fa-cc-diners-club"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio4" value="option4">
+                                    <label class="form-check-label" for="inlineRadio3"><i
+                                            class="fa-brands fa-cc-amex"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                            <p class="sub-text"><small class="text-muted">Add any notes here.</small></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-secondary me-md-2" type="button">Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="Send">
                     </div>
                 </div>
-                <div class="ms-2 col-5 col-3 col-4">
-                    <label for="numberCard" class="form-label">Card #</label>
-                    <input type="password" class="form-control" id="numberCard" placeholder="XXXXXXXXXXXXXXXX">
-
-                    <label for="numberCVC" clas="form-label">CVC #</label>
-                    <input type="number" class="form-control" id="numberCVC" placeholder="0000">
-                </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
